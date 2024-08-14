@@ -1,0 +1,16 @@
+ <svg id="logo" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 84 96">
+  <g transform="translate(-8.000000, -2.000000)">
+    <g transform="translate(11.000000, 5.000000)">
+      <polygon
+        id="Shape"
+        stroke="#0a192f"
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="#0a192f"
+        points="39 0 0 22 0 67 39 90 78 68 78 23"
+      />
+        <text x="40" y="55" font-size="40" fill="#00FFFF" font-family="Arial, Helvetica, sans-serif" text-anchor="middle">JK</text>
+        </g>
+  </g>
+   </svg>
