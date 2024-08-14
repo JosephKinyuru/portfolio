@@ -10,9 +10,19 @@
     "@types/node": "^16.18.104",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "animejs": "^3.2.2",
+    "clsx": "^2.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^5.2.1",
+    "react-router-dom": "^6.25.1",
+    "react-scripts": "^5.0.1",
+    "react-scroll": "^1.9.0",
+    "react-transition-group": "^4.4.5",
+    "sass": "^1.77.8",
+    "scrollreveal": "^4.0.9",
+    "styled-components": "^6.1.12",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -39,5 +49,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/animejs": "^3.1.12",
+    "@types/react-helmet": "^6.1.11",
+    "@types/react-scroll": "^1.8.10",
+    "@types/react-transition-group": "^4.4.10",
+    "@types/scrollreveal": "^0.0.11"
   }
 }
