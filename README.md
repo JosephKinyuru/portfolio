@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# Portfolio v1.0
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is version 1.0 of my portfolio website hosted on netlify.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This repository contains the codebase for my personal portfolio website. The design is credited to Brittany Chiang. The portfolio showcases my projects, skills, and experiences in a simple and elegant layout.
 
-### `npm start`
+## Credits
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Design: [Brittany Chiang](https://brittanychiang.com/)
+- Codebase: [https://github.com/JosephKinyuru/PersonalPortfolio1.0]
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## License
 
-### `npm test`
+The design used in this portfolio is an open-source design by Brittany Chiang. Please refer to the [LICENSE](https://github.com/JosephKinyuru/PersonalPortfolio1.0/blob/main/LICENSE) file for more details on the licensing.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Version History
 
-### `npm run build`
+- v1.0: Initial version of the portfolio website.
+- v2.0 will be available soon on a seperate repository and site.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- Typescript
+- SCSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+Feel free to fork or clone this repository to create your own portfolio website based on this design. Remember to credit Brittany Chiang for the original design.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🛠 Installation & Set Up
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Install dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   ```sh
+   npm install
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. Start the development server
 
-## Learn More
+   ```sh
+   npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🚀 Building and Running for Production
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Generate a full static production build
+
+   ```sh
+   npm run build
+   ```
+
+## Support
+
+If you have any questions or suggestions regarding the portfolio website or need assistance, feel free to create an issue or reach out to me via [email](josephkinyuru22@gmail.com)
+
+Thank you for checking out my portfolio v1.0! 🚀
