@@ -324,7 +324,7 @@ const data: Project[] = [
   },
   {
     date: '01-07-2024',
-    title: 'SribePDF',
+    title: 'ScribePDF',
     cover: "/assets/scribepdf.png",
     github: 'https://github.com/JosephKinyuru/scribepdf',
     external: 'https://scribepdf.vercel.app/',

@@ -148,7 +148,7 @@ const data: Project[] = [
   },
   {
     date: '01-07-2024',
-    title: 'SribePDF',
+    title: 'ScribePDF',
     github: 'https://github.com/JosephKinyuru/scribepdf',
     external: 'https://scribepdf.vercel.app/',
     tech: ['NextJS', 'Pinecone', 'Langchain', 'OpenAI'],
