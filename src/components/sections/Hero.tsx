@@ -66,12 +66,12 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I&apos;m a software engineer specializing in building unique
-        digital experiences. Currently, I&apos;m focused on completing a bachelors in computer science at{' '}
+        I&apos;m a software engineer specializing in building unique and accessible digital experiences. 
+        {/* Currently, I&apos;m focused on completing a bachelors in computer science at{' '}
         <a href="https://strathmore.edu/" target="_blank" rel="noreferrer">
           Strathmore University
         </a>
-        .
+        . */}
       </p>
     </>
   );
