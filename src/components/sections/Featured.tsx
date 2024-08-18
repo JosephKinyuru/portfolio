@@ -314,7 +314,7 @@ interface Project {
   
 const data: Project[] = [
   {
-    date: '27-05-2024',
+    date: '05-27-2024',
     title: 'CaseFiti',
     cover: "/assets/casefiti.png",
     github: 'https://github.com/JosephKinyuru/casefiti',
@@ -323,7 +323,7 @@ const data: Project[] = [
     html: 'CaseFiti enables you to create custom high-quality phone cases in seconds from your very own photos.',
   },
   {
-    date: '01-07-2024',
+    date: '07-01-2024',
     title: 'ScribePDF',
     cover: "/assets/scribepdf.png",
     github: 'https://github.com/JosephKinyuru/scribepdf',
@@ -332,7 +332,7 @@ const data: Project[] = [
     html: 'ScribePDF is open-source software to make chatting with your PDF files easy. You can open any PDF resource and trace data within it in seconds.',
   },
   {
-    date: '01-08-2024',
+    date: '08-01-2024',
     title: 'Light Landing Page',
     cover: "/assets/light-landing-page.png",
     github: 'https://github.com/JosephKinyuru/light-landing-page',
@@ -341,7 +341,7 @@ const data: Project[] = [
     html: 'A minimalistic landing page designed to showcase my proficiency in web technologies through a clean and functional design.'
   },
   {
-    date: '23-07-2024',
+    date: '07-23-2024',
     title: 'Dark Landing Page',
     cover: "/assets/dark-landing-page.png",
     github: 'https://github.com/JosephKinyuru/dark-landing-page',

@@ -180,7 +180,7 @@ interface Project {
   
 const data: Project[] = [
   {
-    date: '1',
+    date: '12-05-2023',
     title: 'Threads',
     github: 'https://github.com/JosephKinyuru/threads2',
     external: 'https://threads2-three.vercel.app/',
@@ -188,7 +188,7 @@ const data: Project[] = [
     html: 'Threads is a duplicate of the app threads by meta. I developed the project in order to test and develop my skills with NextJS and cloud computing with MongoDB. Feel free to check it out its works really well for a social app.',
   },
   {
-    date: '2',
+    date: '07-03-2023',
     title: 'Cooking confessions',
     github: 'https://github.com/JosephKinyuru/CookingConfessions',
     external: 'https://cookingconfessions.netlify.app/',
@@ -196,7 +196,7 @@ const data: Project[] = [
     html: 'Cooking confessions has a curated data set of different recipes which are categorized into four categories. Users are able to view the available recipes after loading the site and can then click to view one full recipe in a different section and then add a comment to it. Users can also choose which category to view.',
   },
   {
-    date: '3',
+    date: '10-03-2023',
     title: 'Story Circle',
     github: 'https://github.com/JosephKinyuru/Story-Circle',
     external: 'https://storycircle.netlify.app/',
@@ -204,7 +204,7 @@ const data: Project[] = [
     html: 'Story Circle is a social platform connecting book enthusiasts, enabling them to create and join book clubs. Users can engage in discussions, explore a rich library of books, and share their insights through comments.',
   },
   {
-    date: '4',
+    date: '08-06-2023',
     title: 'Auto Track',
     github: 'https://github.com/barondevke/AutoTrackFinal',
     external: 'https://autotrack2.netlify.app/',
