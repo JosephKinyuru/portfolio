@@ -332,6 +332,15 @@ const data: Project[] = [
     html: 'ScribePDF is open-source software to make chatting with your PDF files easy. You can open any PDF resource and trace data within it in seconds.',
   },
   {
+    date: '08-27-2024',
+    title: 'SEO Sample Page',
+    cover: "/assets/seo-landing-page.png",
+    github: 'https://github.com/JosephKinyuru/seo-landing-page',
+    external: 'https://seo-landing-page-tau.vercel.app/',
+    tech: ['NextJS', 'Framer-motion', 'DotLottie', ''],
+    html: 'A minimalistic landing page with advanced animation and lottie file players built to showcase my skills on the front end.'
+  },
+  {
     date: '08-01-2024',
     title: 'Light Landing Page',
     cover: "/assets/light-landing-page.png",
@@ -340,15 +349,6 @@ const data: Project[] = [
     tech: ['NextJS', 'Framer-motion', 'Sass'],
     html: 'A minimalistic landing page designed to showcase my proficiency in web technologies through a clean and functional design.'
   },
-  {
-    date: '07-23-2024',
-    title: 'Dark Landing Page',
-    cover: "/assets/dark-landing-page.png",
-    github: 'https://github.com/JosephKinyuru/dark-landing-page',
-    external: 'https://dark-landing-page-rouge.vercel.app/',
-    tech: ['NextJS', 'Framer-motion', '3D', 'Acceternity'],
-    html: 'A minimalistic landing page designed to showcase my proficiency in web technologies through a clean and functional design.'
-  }
 ];  
 
 const Featured = () => {

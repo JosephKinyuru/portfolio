@@ -180,6 +180,22 @@ interface Project {
   
 const data: Project[] = [
   {
+    date: '07-23-2024',
+    title: 'Dark Landing Page',
+    github: 'https://github.com/JosephKinyuru/dark-landing-page',
+    external: 'https://dark-landing-page-rouge.vercel.app/',
+    tech: ['NextJS', 'Framer-motion', '3D', 'Acceternity'],
+    html: 'A minimalistic landing page designed to showcase my proficiency in web technologies through a clean and functional design.'
+  },
+  {
+    date: '08-06-2023',
+    title: 'Auto Track',
+    github: 'https://github.com/barondevke/AutoTrackFinal',
+    external: 'https://autotrack2.netlify.app/',
+    tech: ['React', 'Public API', 'CSS3'],
+    html: 'AutoTrack is a website that allows users to buy and sell cars. It allows users to select from a wide variety of cars to buy from and they can even search for a specific car or narrow down their search according to their budget. Users can also add their own car to sell on the site.'
+  },
+  {
     date: '12-05-2023',
     title: 'Threads',
     github: 'https://github.com/JosephKinyuru/threads2',
@@ -203,14 +219,6 @@ const data: Project[] = [
     tech: ['React', 'Flask', 'PostgreSQL', 'CORS'],
     html: 'Story Circle is a social platform connecting book enthusiasts, enabling them to create and join book clubs. Users can engage in discussions, explore a rich library of books, and share their insights through comments.',
   },
-  {
-    date: '08-06-2023',
-    title: 'Auto Track',
-    github: 'https://github.com/barondevke/AutoTrackFinal',
-    external: 'https://autotrack2.netlify.app/',
-    tech: ['React', 'Public API', 'CSS3'],
-    html: 'AutoTrack is a website that allows users to buy and sell cars. It allows users to select from a wide variety of cars to buy from and they can even search for a specific car or narrow down their search according to their budget. Users can also add their own car to sell on the site.'
-  }
 ];  
 
 const GRID_LIMIT = 6;
