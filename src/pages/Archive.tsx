@@ -161,6 +161,13 @@ const data: Project[] = [
     tech: ['NextJS', 'Framer-motion', 'Sass'],
   },
   {
+    date: '08-27-2024',
+    title: 'SEO Sample Page',
+    github: 'https://github.com/JosephKinyuru/seo-landing-page',
+    external: 'https://seo-landing-page-tau.vercel.app/',
+    tech: ['NextJS', 'Framer-motion', 'DotLottie', ''],
+  },
+  {
     date: '07-23-2024',
     title: 'Dark Landing Page',
     github: 'https://github.com/JosephKinyuru/dark-landing-page',
