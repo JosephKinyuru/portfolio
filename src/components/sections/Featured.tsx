@@ -294,8 +294,10 @@ const StyledProject = styled.li`
 
       @media (max-width: 768px) {
         object-fit: cover;
+        object-position: center;
         width: auto;
-        height: 100%;
+        height: 340px; 
+        max-height: 340px;
         filter: grayscale(100%) contrast(1) brightness(50%);
       }
     }
