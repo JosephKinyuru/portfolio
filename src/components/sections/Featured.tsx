@@ -24,6 +24,7 @@ const StyledProject = styled.li`
 
   @media (max-width: 768px) {
     ${({ theme }) => theme.mixins.boxShadow};
+    grid-gap: 25px;
   }
 
   &:not(:last-of-type) {
