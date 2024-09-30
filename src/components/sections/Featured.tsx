@@ -286,6 +286,11 @@ const StyledProject = styled.li`
         background-color: var(--navy);
         mix-blend-mode: screen;
       }
+
+      @media (max-width: 768px) {
+        height: 340px; 
+        max-height: 340px;
+      }
     }
 
     .img {
