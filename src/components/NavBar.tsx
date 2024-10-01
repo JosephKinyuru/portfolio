@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled, { css } from 'styled-components';
@@ -160,9 +160,9 @@ const Nav = ({ isHome } : { isHome : boolean }) => {
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const prefersReducedMotion = usePrefersReducedMotion();
 
-  const handleScroll = () => {
-    setScrolledToTop(window.pageYOffset < 50);
-  };
+  const handleScroll = useCallback(() => {
+    setScrolledToTop(window.scrollY < 50);
+  }, []);
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -179,7 +179,7 @@ const Nav = ({ isHome } : { isHome : boolean }) => {
       clearTimeout(timeout);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [prefersReducedMotion, handleScroll]); 
 
   const timeout = isHome ? loaderDelay : 0;
   const fadeClass = isHome ? 'fade' : '';
