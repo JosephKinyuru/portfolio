@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -167,64 +167,76 @@ const Menu = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
 
-  let menuFocusables: (HTMLButtonElement | HTMLAnchorElement)[];
-  let firstFocusableEl: HTMLButtonElement | HTMLAnchorElement | null;
-  let lastFocusableEl: HTMLButtonElement | HTMLAnchorElement | null;
+  const menuFocusables = useRef<(HTMLButtonElement | HTMLAnchorElement)[]>([]);
+  const firstFocusableEl = useRef<HTMLButtonElement | HTMLAnchorElement | null>(null);
+  const lastFocusableEl = useRef<HTMLButtonElement | HTMLAnchorElement | null>(null);
 
-  const setFocusables = () => {
+  // Memoizing the setFocusables function
+  const setFocusables = useCallback(() => {
     if (navRef.current) {
-      menuFocusables = [buttonRef.current!, ...Array.from(navRef.current.querySelectorAll('a'))];
-      firstFocusableEl = menuFocusables[0] || null;
-      lastFocusableEl = menuFocusables[menuFocusables.length - 1] || null;
+      menuFocusables.current = [buttonRef.current!, ...Array.from(navRef.current.querySelectorAll('a'))];
+      firstFocusableEl.current = menuFocusables.current[0] || null;
+      lastFocusableEl.current = menuFocusables.current[menuFocusables.current.length - 1] || null;
     }
-  };
+  }, [navRef]);
 
-  const handleBackwardTab = (e: KeyboardEvent) => {
-    if (document.activeElement === firstFocusableEl) {
-      e.preventDefault();
-      lastFocusableEl?.focus();
-    }
-  };
-
-  const handleForwardTab = (e: KeyboardEvent) => {
-    if (document.activeElement === lastFocusableEl) {
-      e.preventDefault();
-      firstFocusableEl?.focus();
-    }
-  };
-
-  const onKeyDown = (e: KeyboardEvent) => {
-    switch (e.key) {
-      case KEY_CODES.ESCAPE:
-      case KEY_CODES.ESCAPE_IE11: {
-        setMenuOpen(false); // Ensure setMenuOpen is defined and properly typed
-        break;
+  const handleBackwardTab = useCallback(
+    (e: KeyboardEvent) => {
+      if (document.activeElement === firstFocusableEl.current) {
+        e.preventDefault();
+        lastFocusableEl.current?.focus();
       }
+    },
+    [firstFocusableEl, lastFocusableEl]
+  );
 
-      case KEY_CODES.TAB: {
-        if (menuFocusables.length === 1) {
-          e.preventDefault();
-          break;
+  const handleForwardTab = useCallback(
+    (e: KeyboardEvent) => {
+      if (document.activeElement === lastFocusableEl.current) {
+        e.preventDefault();
+        firstFocusableEl.current?.focus();
+      }
+    },
+    [firstFocusableEl, lastFocusableEl]
+  );
+
+  // Memoizing onKeyDown
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+        switch (e.key) {
+            case KEY_CODES.ESCAPE:
+            case KEY_CODES.ESCAPE_IE11: {
+                setMenuOpen(false); // Ensure setMenuOpen is defined and properly typed
+                break;
+            }
+        
+            case KEY_CODES.TAB: {
+                if (menuFocusables.current.length === 1) {
+                e.preventDefault();
+                break;
+                }
+                if (e.shiftKey) {
+                handleBackwardTab(e);
+                } else {
+                handleForwardTab(e);
+                }
+                break;
+            }
+        
+            default: {
+                break;
+            }
         }
-        if (e.shiftKey) {
-          handleBackwardTab(e);
-        } else {
-          handleForwardTab(e);
-        }
-        break;
-      }
+    },
+    [handleBackwardTab, handleForwardTab]
+  );
 
-      default: {
-        break;
-      }
-    }
-  };
-
-  const onResize = (e: UIEvent) => {
+  // Memoizing onResize
+  const onResize = useCallback(() => {
     if (window.innerWidth > 768) {
       setMenuOpen(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     document.addEventListener('keydown', onKeyDown);
@@ -236,9 +248,9 @@ const Menu = () => {
       document.removeEventListener('keydown', onKeyDown);
       window.removeEventListener('resize', onResize);
     };
-  }, []);
+  }, [onKeyDown, onResize, setFocusables]);
 
-  const wrapperRef = useRef<HTMLDivElement>(null);  //Check LATER 
+  const wrapperRef = useRef<HTMLDivElement>(null);
   useOnClickOutside(wrapperRef, () => setMenuOpen(false));
 
   return (
