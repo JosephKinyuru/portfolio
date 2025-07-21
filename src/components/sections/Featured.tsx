@@ -1,10 +1,9 @@
-import React, { useEffect, useRef } from 'react';
-import styled from 'styled-components';
-import { sr } from '../../lib/utils';
-import { srConfig } from '../../config';
-import { usePrefersReducedMotion } from '../../hooks';
-import  Icon from '../icons/icons';
-
+import React, { useEffect, useRef } from "react";
+import styled from "styled-components";
+import { sr } from "../../lib/utils";
+import { srConfig } from "../../config";
+import { usePrefersReducedMotion } from "../../hooks";
+import Icon from "../icons/icons";
 
 const StyledProjectsGrid = styled.ul`
   ${({ theme }) => theme.mixins.resetList};
@@ -138,7 +137,7 @@ const StyledProject = styled.li`
         position: static;
 
         &:before {
-          content: '';
+          content: "";
           display: block;
           position: absolute;
           z-index: 0;
@@ -273,7 +272,7 @@ const StyledProject = styled.li`
       }
 
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         width: 100%;
         height: 100%;
@@ -288,7 +287,7 @@ const StyledProject = styled.li`
       }
 
       @media (max-width: 768px) {
-        height: 340px; 
+        height: 340px;
         max-height: 340px;
       }
     }
@@ -302,7 +301,7 @@ const StyledProject = styled.li`
         object-fit: cover;
         object-position: center;
         width: auto;
-        height: 340px; 
+        height: 340px;
         max-height: 340px;
         filter: grayscale(100%) contrast(1) brightness(50%);
       }
@@ -311,124 +310,151 @@ const StyledProject = styled.li`
 `;
 
 interface Project {
-    date: string;
-    title: string;
-    cover: string;
-    github: string;
-    external: string;
-    tech: string[];
-    html: string;
-  }
-  
+  date: string;
+  title: string;
+  cover: string;
+  github: string;
+  external: string;
+  tech: string[];
+  html: string;
+}
+
 const data: Project[] = [
   {
-    date: '05-27-2024',
-    title: 'CaseFiti',
+    date: "06-27-2025",
+    title: "Eventify",
+    cover: "/assets/eventify.png",
+    github: "https://github.com/JosephKinyuru/eventify",
+    external: "https://eventifyke.netlify.app/",
+    tech: [
+      "Plain HTML",
+      "CSS3",
+      "Javascript",
+      "Express",
+      "Prisma",
+      "Cloudinary",
+    ],
+    html: "Eventify is designed to simplify event creation, discovery, and management. Users can seamlessly create new events, browse a variety of categories, and manage their personal wishlists.",
+  },
+  {
+    date: "05-27-2024",
+    title: "CaseFiti",
     cover: "/assets/casefiti.png",
-    github: 'https://github.com/JosephKinyuru/casefiti',
-    external: 'https://casefiti.vercel.app',
-    tech: ['Next.JS', 'Uploadthing', 'Typescript', 'Tailwindcss', 'Stripe'],
-    html: 'CaseFiti enables you to create custom high-quality phone cases in seconds from your very own photos.',
+    github: "https://github.com/JosephKinyuru/casefiti",
+    external: "https://casefiti.vercel.app",
+    tech: ["Next.JS", "Uploadthing", "Typescript", "Tailwindcss", "Stripe"],
+    html: "CaseFiti enables you to create custom high-quality phone cases in seconds from your very own photos.",
   },
   {
-    date: '07-01-2024',
-    title: 'ScribePDF',
+    date: "07-01-2024",
+    title: "ScribePDF",
     cover: "/assets/scribepdf.png",
-    github: 'https://github.com/JosephKinyuru/scribepdf',
-    external: 'https://scribepdf.vercel.app/',
-    tech: ['NextJS', 'Pinecone', 'Langchain', 'OpenAI'],
-    html: 'ScribePDF is open-source software to make chatting with your PDF files easy. You can open any PDF resource and trace data within it in seconds.',
+    github: "https://github.com/JosephKinyuru/scribepdf",
+    external: "https://scribepdf.vercel.app/",
+    tech: ["NextJS", "Pinecone", "Langchain", "OpenAI"],
+    html: "ScribePDF is open-source software to make chatting with your PDF files easy. You can open any PDF resource and trace data within it in seconds.",
   },
   {
-    date: '08-27-2024',
-    title: 'SEO Sample Page',
+    date: "08-27-2024",
+    title: "SEO Sample Page",
     cover: "/assets/seo-landing-page.png",
-    github: 'https://github.com/JosephKinyuru/seo-landing-page',
-    external: 'https://seo-landing-page-tau.vercel.app/',
-    tech: ['NextJS', 'Framer-motion', 'DotLottie', ''],
-    html: 'A minimalistic landing page with advanced animation and lottie file players built to showcase my skills on the front end.'
+    github: "https://github.com/JosephKinyuru/seo-landing-page",
+    external: "https://seo-landing-page-tau.vercel.app/",
+    tech: ["NextJS", "Framer-motion", "DotLottie", ""],
+    html: "A minimalistic landing page with advanced animation and lottie file players built to showcase my skills on the front end.",
   },
   {
-    date: '08-01-2024',
-    title: 'Light Landing Page',
+    date: "08-01-2024",
+    title: "Light Landing Page",
     cover: "/assets/light-landing-page.png",
-    github: 'https://github.com/JosephKinyuru/light-landing-page',
-    external: 'https://light-landing-page.vercel.app/',
-    tech: ['NextJS', 'Framer-motion', 'Sass'],
-    html: 'A minimalistic landing page designed to showcase my proficiency in web technologies through a clean and functional design.'
+    github: "https://github.com/JosephKinyuru/light-landing-page",
+    external: "https://light-landing-page.vercel.app/",
+    tech: ["NextJS", "Framer-motion", "Sass"],
+    html: "A minimalistic landing page designed to showcase my proficiency in web technologies through a clean and functional design.",
   },
-];  
+];
 
 const Featured = () => {
+  const revealTitle = useRef<HTMLHeadingElement>(null);
+  const revealProjects = useRef<HTMLDivElement[]>([]);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
-    const revealTitle = useRef<HTMLHeadingElement>(null);
-    const revealProjects = useRef<HTMLDivElement[]>([]);
-    const prefersReducedMotion = usePrefersReducedMotion();
-  
-    useEffect(() => {
-      if (prefersReducedMotion) {
-        return;
-      }
-  
-      if (revealTitle.current) {
-        sr!.reveal(revealTitle.current, srConfig());
-      }
-      revealProjects.current.forEach((ref, i) => {
-        if (ref) sr!.reveal(ref, srConfig(i * 100));
-      });
-    }, [prefersReducedMotion]);
-  
-    return (
-      <section id="projects">
-        <h2 className="numbered-heading" ref={revealTitle}>
-          Some Things I’ve Built
-        </h2>
-  
-        <StyledProjectsGrid>
-          {data.map((project, i) => {
-            const { external, title, tech, github, cover, html } = project;
-  
-            return (
-              <StyledProject key={i} ref={el => (revealProjects.current[i] = el as unknown as HTMLDivElement)}>
-                <div className="project-content">
-                  <div>
-                    <p className="project-overline">Featured Project</p>
-                    <h3 className="project-title">
-                      <a href={external}>{title}</a>
-                    </h3>
-                    <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
-                    {tech.length > 0 && (
-                      <ul className="project-tech-list">
-                        {tech.map((techItem, i) => (
-                          <li key={i}>{techItem}</li>
-                        ))}
-                      </ul>
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      return;
+    }
+
+    if (revealTitle.current) {
+      sr!.reveal(revealTitle.current, srConfig());
+    }
+    revealProjects.current.forEach((ref, i) => {
+      if (ref) sr!.reveal(ref, srConfig(i * 100));
+    });
+  }, [prefersReducedMotion]);
+
+  return (
+    <section id="projects">
+      <h2 className="numbered-heading" ref={revealTitle}>
+        Some Things I’ve Built
+      </h2>
+
+      <StyledProjectsGrid>
+        {data.map((project, i) => {
+          const { external, title, tech, github, cover, html } = project;
+
+          return (
+            <StyledProject
+              key={i}
+              ref={(el) =>
+                (revealProjects.current[i] = el as unknown as HTMLDivElement)
+              }
+            >
+              <div className="project-content">
+                <div>
+                  <p className="project-overline">Featured Project</p>
+                  <h3 className="project-title">
+                    <a href={external}>{title}</a>
+                  </h3>
+                  <div
+                    className="project-description"
+                    dangerouslySetInnerHTML={{ __html: html }}
+                  />
+                  {tech.length > 0 && (
+                    <ul className="project-tech-list">
+                      {tech.map((techItem, i) => (
+                        <li key={i}>{techItem}</li>
+                      ))}
+                    </ul>
+                  )}
+                  <div className="project-links">
+                    {github && (
+                      <a href={github} aria-label="GitHub Link">
+                        <Icon name="GitHub" />
+                      </a>
                     )}
-                    <div className="project-links">
-                      {github && (
-                        <a href={github} aria-label="GitHub Link">
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && (
-                        <a href={external} aria-label="External Link" className="external">
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
+                    {external && (
+                      <a
+                        href={external}
+                        aria-label="External Link"
+                        className="external"
+                      >
+                        <Icon name="External" />
+                      </a>
+                    )}
                   </div>
                 </div>
-                <div className="project-image">
-                  <a href={external ? external : github ? github : '#'}>
-                    <img src={cover} alt={title} className="img" />
-                  </a>
-                </div>
-              </StyledProject>
-            );
-          })}
-        </StyledProjectsGrid>
-      </section>
-    );
-  };
+              </div>
+              <div className="project-image">
+                <a href={external ? external : github ? github : "#"}>
+                  <img src={cover} alt={title} className="img" />
+                </a>
+              </div>
+            </StyledProject>
+          );
+        })}
+      </StyledProjectsGrid>
+    </section>
+  );
+};
 
 export default Featured;
