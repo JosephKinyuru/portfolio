@@ -62,16 +62,11 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Joseph Kinyuru.</h2>;
-  const three = <h3 className="big-heading">I build apps for the web.</h3>;
+  const three = <h3 className="big-heading">I build digital experiences.</h3>;
   const four = (
     <>
       <p>
-        I&apos;m a software engineer specializing in building unique and accessible digital experiences. 
-        {/* Currently, I&apos;m focused on completing a bachelors in computer science at{' '}
-        <a href="https://strathmore.edu/" target="_blank" rel="noreferrer">
-          Strathmore University
-        </a>
-        . */}
+        I&apos;m a software engineer experienced in building unique digital experiences across multiple platforms.
       </p>
     </>
   );

@@ -126,7 +126,7 @@ const About = () => {
     }
   }, [prefersReducedMotion]); 
 
-  const skills = ['Python','JavaScript', 'TypeScript', 'Django', 'React', 'Node.js',];
+  const skills = ['TypeScript', 'React / React Native', 'Next.js', 'Node.js / Express', 'Kotlin / Jetpack Compose', 'PostgreSQL', 'Prisma / Drizzle', 'Astro'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -136,18 +136,19 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Joseph and I enjoy creating things that live on the internet. 
-              My interest in web applications started in 2019 when I discovered scratch.
+              Hello! I&apos;m Joseph, a Computer Science student
+              at <a href="https://strathmore.edu/" target="_blank" rel="noreferrer">Strathmore University</a> who
+              enjoys building things that live on the internet. I first got into programming in 2019
+              and have been hooked ever since.
             </p>
 
             <p>
-              Fast forward to today, and I`ve had the privilege of developing multiple apps of my own with frameworks more challenging than scratch. 
-              I still look forward to learning and gaining more experience in software engineering.
-              My main focus these days is building accessible, inclusive products and digital
-              experiences.
+              Fast forward to today, and I&apos;ve had the privilege of shipping production websites
+              for real clients, building cross-platform mobile apps, and working on full-stack projects
+              from the ground up. I&apos;m always looking for new challenges and opportunities to grow.
             </p>
 
-            <p>Here are a few technologies I&apos;ve been working with recently:</p>
+            <p>Here are some technologies I&apos;ve been working with recently:</p>
           </div>
 
           <ul className="skills-list">
@@ -161,7 +162,7 @@ const About = () => {
               className="img"
               src="/assets/main.jpg"
               width={500}
-              alt="JPG"
+              alt="Joseph Kinyuru"
             />
           </div>
         </StyledPic>

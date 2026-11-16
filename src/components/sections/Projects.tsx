@@ -180,44 +180,28 @@ interface Project {
   
 const data: Project[] = [
   {
-    date: '07-23-2024',
-    title: 'Dark Landing Page',
-    github: 'https://github.com/JosephKinyuru/dark-landing-page',
-    external: 'https://dark-landing-page-rouge.vercel.app/',
-    tech: ['NextJS', 'Framer-motion', '3D', 'Acceternity'],
-    html: 'A minimalistic landing page designed to showcase my proficiency in web technologies through a clean and functional design.'
+    date: '02-01-2026',
+    title: 'Offscroll',
+    github: 'https://github.com/JosephKinyuru/offscroll',
+    external: '',
+    tech: ['Kotlin', 'Jetpack Compose', 'Room', 'Material 3'],
+    html: 'An Android screen-time limiter that blocks compulsive app usage and redirects you to real activities. Features daily limits, focus windows, and streak tracking.',
   },
   {
-    date: '08-06-2023',
-    title: 'Auto Track',
-    github: 'https://github.com/barondevke/AutoTrackFinal',
-    external: 'https://autotrack2.netlify.app/',
-    tech: ['React', 'Public API', 'CSS3'],
-    html: 'AutoTrack simplifies car buying and selling by helping you find the perfect car within your budget or list your own vehicle for sale, making the process hassle-free.'
-  },
-  {
-    date: '12-05-2023',
-    title: 'Threads',
-    github: 'https://github.com/JosephKinyuru/threads2',
-    external: 'https://threads2-three.vercel.app/',
-    tech: ['Next.JS', 'MongoDB', 'Typescript', 'Tailwindcss'],
-    html: 'Threads is a recreation of Meta’s Threads app, built to enhance my skills with Next.js and MongoDB. It functions well as a social app.',
+    date: '06-27-2025',
+    title: 'Eventify',
+    github: 'https://github.com/JosephKinyuru/eventify',
+    external: 'https://eventifyke.netlify.app/',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Express', 'Prisma'],
+    html: 'An event platform for creating, discovering, and managing events. Users can browse categories, create events, and manage personal wishlists.',
   },
   {
     date: '07-03-2023',
-    title: 'Cooking confessions',
+    title: 'Cooking Confessions',
     github: 'https://github.com/JosephKinyuru/CookingConfessions',
     external: 'https://cookingconfessions.netlify.app/',
-    tech: ['Javascript (vanilla)', 'Html', 'CSS3'],
-    html: 'Cooking Confessions helps you discover and engage with a variety of curated recipes. Browse by category, view detailed recipes, and share your thoughts with comments.',
-  },
-  {
-    date: '10-03-2023',
-    title: 'Story Circle',
-    github: 'https://github.com/JosephKinyuru/Story-Circle',
-    external: 'https://storycircle.netlify.app/',
-    tech: ['React', 'Flask', 'PostgreSQL', 'CORS'],
-    html: 'Story Circle helps book enthusiasts connect, join or create book clubs, explore new reads, and engage in lively discussions with fellow readers.',
+    tech: ['JavaScript', 'HTML', 'CSS3'],
+    html: 'A recipe discovery app with curated datasets across four categories. Users can browse recipes, view full details, and add comments.',
   },
 ];  
 
@@ -348,7 +332,7 @@ const Projects = () => {
                 timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
                 exit={false}>
                 <StyledProject
-                  ref={el => el && revealProjects.current.push(el as unknown as HTMLDivElement)}
+                  ref={((el: HTMLLIElement | null) => el && revealProjects.current.push(el as unknown as HTMLDivElement)) as any}
                   style={{
                     transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
                   }}>

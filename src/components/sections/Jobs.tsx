@@ -279,7 +279,7 @@ const Jobs = () => {
       <h2 className="numbered-heading">Where I’ve Worked</h2>
 
       <div className="inner">
-        <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
+        <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={(e: React.KeyboardEvent) => onKeyDown(e)}>
           {data &&
             data.map(( job, i) => {
               const { company } = job;
@@ -288,7 +288,7 @@ const Jobs = () => {
                   key={i}
                   isActive={activeTabId === i}
                   onClick={() => setActiveTabId(i)}
-                  ref={el => (tabs.current[i] = el)}
+                  ref={((el: HTMLButtonElement | null) => (tabs.current[i] = el)) as any}
                   id={`tab-${i}`}
                   role="tab"
                   tabIndex={activeTabId === i ? 0 : -1} 

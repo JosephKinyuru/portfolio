@@ -321,56 +321,49 @@ interface Project {
 
 const data: Project[] = [
   {
-    date: "06-27-2025",
-    title: "Eventify",
-    cover: "/assets/eventify.png",
-    github: "https://github.com/JosephKinyuru/eventify",
-    external: "https://eventifyke.netlify.app/",
-    tech: [
-      "Plain HTML",
-      "CSS3",
-      "Javascript",
-      "Express",
-      "Prisma",
-      "Cloudinary",
-    ],
-    html: "Eventify is designed to simplify event creation, discovery, and management. Users can seamlessly create new events, browse a variety of categories, and manage their personal wishlists.",
-  },
-  {
-    date: "05-27-2024",
-    title: "CaseFiti",
-    cover: "/assets/casefiti.png",
+    date: "05-01-2026",
+    title: "Casefiti",
+    cover: "/assets/casefiti.webp",
     github: "https://github.com/JosephKinyuru/casefiti",
-    external: "https://casefiti.vercel.app",
-    tech: ["Next.JS", "Uploadthing", "Typescript", "Tailwindcss", "Stripe"],
-    html: "CaseFiti enables you to create custom high-quality phone cases in seconds from your very own photos.",
+    external: "https://casecobra-bice.vercel.app",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    html: "An e-commerce platform for designing and ordering custom high-quality phone cases. Features a visual case designer, checkout flow, and order management.",
   },
   {
-    date: "07-01-2024",
-    title: "ScribePDF",
-    cover: "/assets/scribepdf.png",
-    github: "https://github.com/JosephKinyuru/scribepdf",
-    external: "https://scribepdf.vercel.app/",
-    tech: ["NextJS", "Pinecone", "Langchain", "OpenAI"],
-    html: "ScribePDF is open-source software to make chatting with your PDF files easy. You can open any PDF resource and trace data within it in seconds.",
+    date: "04-01-2026",
+    title: "Nawiri Wellness",
+    cover: "/assets/nawiri.webp",
+    github: "",
+    external: "https://nawiri-phi.vercel.app",
+    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Recharts"],
+    html: "A volunteer opportunity platform connecting individuals with community organizations. Features event discovery, registration, coordinator dashboards with analytics, and file upload capabilities.",
   },
   {
-    date: "08-27-2024",
-    title: "SEO Sample Page",
-    cover: "/assets/seo-landing-page.png",
-    github: "https://github.com/JosephKinyuru/seo-landing-page",
-    external: "https://seo-landing-page-tau.vercel.app/",
-    tech: ["NextJS", "Framer-motion", "DotLottie", ""],
-    html: "A minimalistic landing page with advanced animation and lottie file players built to showcase my skills on the front end.",
+    date: "03-01-2026",
+    title: "Trova",
+    cover: "/assets/trova.webp",
+    github: "",
+    external: "https://trova-theta.vercel.app",
+    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "TanStack Query"],
+    html: "A student housing marketplace with role-based access for students, landlords, and admins. Features listing management, image galleries, reviews, bookmarks, and an admin moderation panel with analytics.",
   },
   {
-    date: "08-01-2024",
-    title: "Light Landing Page",
-    cover: "/assets/light-landing-page.png",
-    github: "https://github.com/JosephKinyuru/light-landing-page",
-    external: "https://light-landing-page.vercel.app/",
-    tech: ["NextJS", "Framer-motion", "Sass"],
-    html: "A minimalistic landing page designed to showcase my proficiency in web technologies through a clean and functional design.",
+    date: "01-01-2026",
+    title: "SQHK",
+    cover: "/assets/sqhk.webp",
+    github: "",
+    external: "https://sqhk.org",
+    tech: ["Next.js", "React", "Sanity CMS", "Paystack", "Resend"],
+    html: "Production website and embedded CMS for the <strong>Society for Quality Healthcare in Kenya</strong>. Handles membership registration, donations via M-Pesa and card (Paystack), and automated renewal reminder emails.",
+  },
+  {
+    date: "06-01-2026",
+    title: "Lune",
+    cover: "/assets/lune.webp",
+    github: "",
+    external: "https://about.lune.social",
+    tech: ["React Native", "Express", "PostgreSQL", "Redis", "Next.js", "Astro"],
+    html: "A cross-platform social media app built from scratch as a monorepo — mobile clients (iOS & Android), REST API with push notifications and OAuth, a Next.js moderation dashboard, and an Astro marketing site. Currently in development.",
   },
 ];
 
@@ -405,7 +398,7 @@ const Featured = () => {
           return (
             <StyledProject
               key={i}
-              ref={(el) =>
+              ref={(el: HTMLLIElement | null) =>
                 (revealProjects.current[i] = el as unknown as HTMLDivElement)
               }
             >
@@ -446,7 +439,7 @@ const Featured = () => {
               </div>
               <div className="project-image">
                 <a href={external ? external : github ? github : "#"}>
-                  <img src={cover} alt={title} className="img" />
+                  <img src={cover} alt={title} className="img" loading="lazy" />
                 </a>
               </div>
             </StyledProject>
